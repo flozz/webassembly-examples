@@ -1,5 +1,6 @@
 all: build
 
+.PHONY: build
 build:
 	mkdir -p build/
 	emcc hello.c -o build/hello.html
