@@ -13,9 +13,10 @@ EMSCRIPTEN_KEEPALIVE void freeBuffer(uint8_t* buffer) {
 
 EMSCRIPTEN_KEEPALIVE void threshold(uint8_t* pixels, int width, int height, int threshold) {
     // There is 4 canals in canvas image data (Red, Green, Blue, Alpha), so its
-    // length is width × height × 4
+    // length is: width × height × 4
     int array_length = width * height * 4;
 
+    // i = i + 4 as we loop over pixels, not over channels.
     for (int i = 0 ; i < array_length ; i += 4) {
         int red = pixels[i+0];
         int green = pixels[i+1];
