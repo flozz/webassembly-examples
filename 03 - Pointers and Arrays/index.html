@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>WebAssembly Example 03</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            html, body {
+                text-align: center;
+                font-family: sans-serif;
+            }
+
+            img, canvas {
+                border: red solid 1px;
+            }
+
+            input {
+                vertical-align: middle;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p><img src="./image.jpg" id="image" /></p>
+        <p>
+            <label>Threshold:</label>
+            <input type="range" min="0" max="255" value="127" id="threshold" />
+        </p>
+        <p><canvas id="canvas"></canvas></p>
+
+        <script src="./build/example.wasm.js"></script>
+        <script src="./script.js"></script>
+    </body>
+
+</html>
