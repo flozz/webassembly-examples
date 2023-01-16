@@ -72,7 +72,7 @@ function main() {
 
     thresholdRange.addEventListener("input", onThresholdInput);
 
-    // Run the function once when the WASM module is initialized
+    // Run the function once when the WASM module is initialized.
     Module.onRuntimeInitialized = function() {
         thresholdImageOnCanvas(image, canvas);
     };

@@ -1,0 +1,21 @@
+name: Deploy Github pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  deploy-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: "Pull the repository"
+        uses: actions/checkout@v3
+
+      - name: "Deploy Github Pages"
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          BRANCH: gh-pages
+          FOLDER: .
