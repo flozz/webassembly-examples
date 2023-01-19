@@ -1,7 +1,6 @@
 #include <stdlib.h>
+#include <stdint.h>
 #include <emscripten.h>
-
-#define uint8_t unsigned char
 
 EMSCRIPTEN_KEEPALIVE uint8_t* allocBuffer(int size) {
     return malloc(size * sizeof(uint8_t));
