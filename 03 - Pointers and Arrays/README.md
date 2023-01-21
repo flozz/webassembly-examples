@@ -40,6 +40,11 @@ If you have Python installed you can run:
 Then open http://localhost:8000/
 
 
+## Online Demo
+
+* https://flozz.github.io/webassembly-examples/03%20-%20Pointers%20and%20Arrays/index.html
+
+
 ## License
 
 The `image.jpg` photo used in this example was taken by Atanu Bose and is licensed under the Creative Commons Attribution-Share Alike 4.0 International license:

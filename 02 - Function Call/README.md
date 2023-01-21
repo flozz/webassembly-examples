@@ -31,3 +31,8 @@ Then, just run the make command:
 ## Run the project
 
 Just open the `index.html` file with you favourite browser.
+
+
+## Online Demo
+
+* https://flozz.github.io/webassembly-examples/02%20-%20Function%20Call/index.html
