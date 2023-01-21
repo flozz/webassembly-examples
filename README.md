@@ -9,9 +9,9 @@ This repository contains WebAssembly examples for an article I published on my b
 
 | Name                                                    | Description                                                          | Online Demo                                                                                      |
 |---------------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| [01 - Hello World](./01 - Hello World/)                 | A simple "hello world" WebAssembly program                           | [Demo](https://flozz.github.io/webassembly-examples/01%20-%20Hello%20World/build/hello.html)     |
-| [02 - Function Call](./02 - Function Call/)             | How to call WebAssembly functions from JavaScript                    | [Demo](https://flozz.github.io/webassembly-examples/02%20-%20Function%20Call/index.html)         |
-| [03 - Pointers and Arrays](./03 - Pointers and Arrays/) | how to use pointers and how to pass arrays to a WebAssembly function | [Demo](https://flozz.github.io/webassembly-examples/03%20-%20Pointers%20and%20Arrays/index.html) |
+| [01 - Hello World](./01%20-%20Hello%20World/)                 | A simple "hello world" WebAssembly program                           | [Demo](https://flozz.github.io/webassembly-examples/01%20-%20Hello%20World/build/hello.html)     |
+| [02 - Function Call](./02%20-%20Function%20Call/)             | How to call WebAssembly functions from JavaScript                    | [Demo](https://flozz.github.io/webassembly-examples/02%20-%20Function%20Call/index.html)         |
+| [03 - Pointers and Arrays](./03%20-%20Pointers%20and%20Arrays/) | how to use pointers and how to pass arrays to a WebAssembly function | [Demo](https://flozz.github.io/webassembly-examples/03%20-%20Pointers%20and%20Arrays/index.html) |
 
 
 ## License
