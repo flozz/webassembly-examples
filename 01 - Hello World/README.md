@@ -32,3 +32,8 @@ Then, just run the make command:
 ## Run the project
 
 Just open the `hello.singlefile.html` file with you favourite browser. If you wan to use `hello.html` instead, you will have to serve the files using an HTTP server.
+
+
+## Online Demo
+
+* https://flozz.github.io/webassembly-examples/01%20-%20Hello%20World/build/hello.html
