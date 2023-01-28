@@ -1,6 +1,6 @@
-# Benchmark 01 - Hue shift
+# Benchmark 02 - Hue shift - Shared buffer
 
-This benchmark mesure the speed difference between a pure JavaScrupt and a WebAssembly versions of a hue shift on a canvas.
+This benchmark mesure the impact on the speed of the memory allocation calls.
 
 
 ## Files
@@ -10,8 +10,7 @@ Source files:
 * `bench.js`: The code to run the benchmark.
 * `image.jpg`: An image that will be modified by the JS and the WASM.
 * `index.html`: The HTML page that host the benchmark.
-* `lib.c`: The C version of the benchmarked functions.
-* `lib.js`: The JavaScript version of the benchmarked functions.
+* `lib.c`: The benchmarked functions.
 * `Makefile`: The makefile to compile the WebAssembly part of the project.
 
 Generated files:
@@ -41,9 +40,9 @@ If you have Python installed you can run:
 Then open http://localhost:8000/
 
 
-## Online Demo
+## Online Version
 
-* https://flozz.github.io/webassembly-examples/bench%2001%20-%20Hue%20shift/index.html
+* https://flozz.github.io/webassembly-examples/bench%2002%20-%20Hue%20shift%20-%20Shared%20buffer/index.html
 
 
 ## License
