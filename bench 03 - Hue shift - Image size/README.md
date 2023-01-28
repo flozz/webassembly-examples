@@ -43,7 +43,7 @@ Then open http://localhost:8000/
 
 ## Online Demo
 
-* https://flozz.github.io/webassembly-examples/bench%2003%20-%20Hue%20shift%20-%20image%20size/index.html
+* https://flozz.github.io/webassembly-examples/bench%2003%20-%20Hue%20shift%20-%20Image%20size/index.html
 
 
 ## License
