@@ -1,4 +1,4 @@
-# Benchmark 03 - Hue shift
+# Benchmark 01 - Hue shift
 
 This benchmark mesure the speed difference between a pure JavaScrupt and a WebAssembly versions of a hue shift on a canvas.
 
