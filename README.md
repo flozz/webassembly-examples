@@ -16,10 +16,10 @@ This repository contains WebAssembly examples for an article I published on my b
 
 ## Benchmarks
 
-| Name                                                                                         | Description                                                                                                 | Online Version                                                                                                       |
-|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| [bench 01 - Hue shift](./bench%2001%20-%20Hue%20shift/                                       | Mesure the speed difference between a pure JavaScrupt and a WebAssembly versions of a hue shift on a canvas | [Online](https://flozz.github.io/webassembly-examples/bench%2001%20-%20Hue%20shift/index.html)                       |
-| [bench 02 - Hue shift - Shared buffer](./bench%2002%20-%20Hue%20shift%20-%20Shared%20buffer/ | Mesure the impact on the speed of the memory allocation calls                                               | [Online](https://flozz.github.io/webassembly-examples/bench%2002%20-%20Hue%20shift%20-%20Shared%20buffer/index.html) |
+| Name                                                                                          | Description                                                                                                 | Online Version                                                                                                       |
+|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| [bench 01 - Hue shift](./bench%2001%20-%20Hue%20shift/)                                       | Mesure the speed difference between a pure JavaScrupt and a WebAssembly versions of a hue shift on a canvas | [Online](https://flozz.github.io/webassembly-examples/bench%2001%20-%20Hue%20shift/index.html)                       |
+| [bench 02 - Hue shift - Shared buffer](./bench%2002%20-%20Hue%20shift%20-%20Shared%20buffer/) | Mesure the impact on the speed of the memory allocation calls                                               | [Online](https://flozz.github.io/webassembly-examples/bench%2002%20-%20Hue%20shift%20-%20Shared%20buffer/index.html) |
 
 ## License
 
