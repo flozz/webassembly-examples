@@ -97,7 +97,7 @@ EMSCRIPTEN_KEEPALIVE void freeBuffer(uint8_t* buffer) {
 
 EMSCRIPTEN_KEEPALIVE void shiftHue(uint8_t* pixels, int width, int height, int rotation) {
     int h, s, v;
-    for (int i = 0 ; i < width * height * DEPTH ; i += 4) {
+    for (int i = 0 ; i < width * height * DEPTH ; i += DEPTH) {
         rgb2hsv(pixels[i+0], pixels[i+1], pixels[i+2], &h, &s, &v);
         h = (h + rotation) % 360;
         hsv2rgb(h, s, v, &pixels[i+0], &pixels[i+1], &pixels[i+2]);
