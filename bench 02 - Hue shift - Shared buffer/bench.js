@@ -72,9 +72,9 @@ function runBenchmark(image, canvas) {
 
     function _updateCsv() {
         const csvTextarea = document.getElementById("raw-results-csv");
-        let csv = "Run;JS;WASM;\n"
+        let csv = "Run;WASM;WASM (shared buffer);\n"
         for (let i = 0; i < wasm2Dusrations.length; i += 1) {
-            csv += `${i+1};${wasm2Dusrations[i]};${wasmDusrations[i]};\n`;
+            csv += `${i+1};${wasmDusrations[i]};${wasm2Dusrations[i]};\n`;
         }
         csvTextarea.innerHTML = csv;
     }
