@@ -1,12 +1,12 @@
 const images = {
-    1024: {image: null, jsDurations: [], wasmDurations: []},
-    768:  {image: null, jsDurations: [], wasmDurations: []},
-    512:  {image: null, jsDurations: [], wasmDurations: []},
-    256:  {image: null, jsDurations: [], wasmDurations: []},
-    128:  {image: null, jsDurations: [], wasmDurations: []},
-    64:   {image: null, jsDurations: [], wasmDurations: []},
-    32:   {image: null, jsDurations: [], wasmDurations: []},
-    16:   {image: null, jsDurations: [], wasmDurations: []},
+    1024: {image: null},
+    768:  {image: null},
+    512:  {image: null},
+    256:  {image: null},
+    128:  {image: null},
+    64:   {image: null},
+    32:   {image: null},
+    16:   {image: null},
 };
 
 const hueShiftWASM = {
@@ -66,62 +66,46 @@ function drawImageToCanvas(image, canvas) {
 }
 
 function runBenchmark(canvas) {
-    let runs = 360;
-    const jsDurations = [];
-    const wasmDurations = [];
+    const RUNS = 200;
+    const csvTextarea = document.getElementById("raw-results-csv");
+    csvTextarea.innerHTML = "Image size;JS;WASM;\n"
 
-    function _updateCsv() {
-        const csvTextarea = document.getElementById("raw-results-csv");
-        let csv = ""
+    // Warmup
+    runJS(canvas, 0);
+    runWASM(canvas, 0);
 
-        csv += "Run;";
-        for (let size in images) {
-            csv += `JS ${size};`;
-            csv += `WASM ${size};`;
-        }
-        csv += "\n";
+    function _run(imageSize) {
+        return new Promise((resolve, reject) => {
+            drawImageToCanvas(images[imageSize].image, canvas);
 
-        for (let i = 0; i < images[1024].jsDurations.length; i += 1) {
-            csv += `${i};`;
-            for (let size in images) {
-                csv += `${images[size].jsDurations[i]};`;
-                csv += `${images[size].wasmDurations[i]};`;
-            }
-            csv += "\n";
-        }
-
-        csvTextarea.innerHTML = csv;
-    }
-
-    function _run() {
-        for (size in images) {
-            drawImageToCanvas(images[size].image, canvas);
-
-            // JavaScript run
+            // JS runs
             const jsStartTime = performance.now();
-            runJS(canvas, runs);
+            for (let i = 0 ; i < RUNS ; i += 1) {
+                runJS(canvas, i * 10 % 360);
+            }
             const jsEndTime = performance.now();
-            images[size].jsDurations.push(jsEndTime - jsStartTime);
 
-            // WebAssembly run
+            // WASM runs
             const wasmStartTime = performance.now();
-            runWASM(canvas, runs);
+            for (let i = 0 ; i < RUNS ; i += 1) {
+                runWASM(canvas, i * 10 % 360);
+            }
             const wasmEndTime = performance.now();
-            images[size].wasmDurations.push(wasmEndTime - wasmStartTime);
-        }
 
-        document.getElementById("runs-count").innerText = images[1024].jsDurations.length;
+            const jsAvgDuration = (jsEndTime - jsStartTime) / RUNS
+            const wasmAvgDuration = (wasmEndTime - wasmStartTime) / RUNS
+            csvTextarea.innerHTML += `${imageSize};${jsAvgDuration};${wasmAvgDuration};\n`;
 
-        // Loop
-        runs -= 1;
-        if (runs > 0) {
-            setTimeout(_run, 0);
-        } else {
-            _updateCsv();
-        }
+            // Let the event loop run to avoid blocking the thread
+            setTimeout(resolve, 0);
+        });
     }
 
-    _run();
+    let promise = Promise.resolve();
+
+    for (let imageSize in images) {
+        promise = promise.then(_run.bind(null, imageSize));
+    }
 }
 
 function main() {
