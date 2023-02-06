@@ -71,8 +71,10 @@ function runBenchmark(canvas) {
     csvTextarea.innerHTML = "Image size;JS;WASM;\n"
 
     // Warmup
-    runJS(canvas, 0);
-    runWASM(canvas, 0);
+    for (let i = 0 ; i < 10 ; i++) {
+        runJS(canvas, i);
+        runWASM(canvas, i);
+    }
 
     function _run(imageSize) {
         return new Promise((resolve, reject) => {
