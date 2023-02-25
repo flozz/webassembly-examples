@@ -43,7 +43,7 @@ Then open http://localhost:8000/
 
 ## Online Demo
 
-* https://flozz.github.io/webassembly-examples/bench%2001%20-%20Hue%20shift%20-%20Single%20Function/index.html
+* https://flozz.github.io/webassembly-examples/bench%2004%20-%20Hue%20shift%20-%20Single%20Function/index.html
 
 
 ## License
