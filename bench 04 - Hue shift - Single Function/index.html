@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Benchmark JS vs WASM: Hue shift</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            html, body {
+                font-family: sans-serif;
+            }
+
+            h1 {
+                margin: 20px 50px;
+            }
+
+            .frame {
+                border: silver solid 2px;
+                margin: 20px 50px;
+                padding: 10px;
+            }
+
+            .frame canvas {
+                max-width: 100%;
+                max-height: 300px;
+                vertical-align: middle;
+            }
+
+            .frame h2 {
+                margin-top: 0;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: silver solid 1px;
+                padding: 7px 5px;
+                text-align: right;
+                min-width: 75px;
+            }
+
+            table tr:first-child td,
+            table tr:first-child th {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <h1>JS vs WASM: Hue shift</h1>
+
+        <div class="frame">
+            <h2>Preview</h2>
+            <img src="./image.jpg" id="image" style="display: none;" />
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div id="step-run" class="frame">
+            <h2>Benchmark</h2>
+            <p>
+                <button id="run">Run benchmark</button>
+            </p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>JS</th>
+                    <th>WASM</th>
+                </tr>
+                <tr>
+                    <th>Min (ms)</th>
+                    <td id="js-min"></td>
+                    <td id="wasm-min"></td>
+                </tr>
+                <tr>
+                    <th>Max (ms)</th>
+                    <td id="js-max"></td>
+                    <td id="wasm-max"></td>
+                </tr>
+                <tr>
+                    <th>Average (ms)</th>
+                    <td id="js-avg"></td>
+                    <td id="wasm-avg"></td>
+                </tr>
+                <tr>
+                    <th>Runs</th>
+                    <td id="runs-count" colspan="2"></td>
+                </tr>
+            </table>
+
+            <p>Raw results (CSV):</p>
+
+            <textarea cols="40" rows="10" id="raw-results-csv"></textarea>
+        </div>
+
+        <script src="./build/lib.wasm.js"></script>
+        <script src="./lib.js"></script>
+        <script src="./bench.js"></script>
+
+    </body>
+
+</html>
